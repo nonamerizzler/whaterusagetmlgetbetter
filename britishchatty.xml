@@ -1,0 +1,745 @@
+<Module>
+<ModulePrefs title="X"/>
+<Content type="html">
+<![CDATA[ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inbox (1908)</title>
+  <link rel="icon" type="image/png" href="https://cdn1.iconfinder.com/data/icons/google-new-logos-1/32/gmail_new_logo-512.png">
+    <style>
+  
+    @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+     
+     
+        /* Enhanced hover effect with more intense glow */
+    h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover, #blocksMessage:Hover, #randomPhrase:Hover {
+        text-shadow: 0 0 10px rgba(52, 152, 219, 1), 0 0 20px rgba(52, 152, 219, 0.8), 0 0 30px rgba(52, 152, 219, 0.6), 0 0 40px rgba(52, 152, 219, 0.4);
+    }
+    /* Scripts for the default headers before hover */
+    h1, h2, h3, h4, h5, h6, #randomPhrase {
+        font-family: 'Varela Round', sans-serif;
+        transition: text-shadow 0.3s ease;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://media0.giphy.com/media/L00auhhVx68CI/giphy.gif?cid=6c09b952zaxm0z7a5c737hhopjctn7a7en56ou5879bmibb1&ep=v1_gifs_search&rid=giphy.gif&ct=g');
+      background-color: #000;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      color: #fff;
+      font-family: 'Varela Round', sans-serif;
+      text-align: center;
+    }
+    body:hover{
+        cursor: default;
+    }
+    
+    h1 {
+      margin-top: 120px;
+      font-size: 24px;
+      font-weight: 700;
+      
+    }
+.ChattyButton {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding: 10px 20px;
+    background-color: #00008B;
+    color: #00FFFF;
+    border: 2px solid #00ff;
+    border-radius: 12px; /* Create rounded rectangle edges */
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif; /* Use the Raleway font imported from Google Fonts in the <head> for the buttons*/
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* Smooth transition for the glow effect */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    /* Initial shadow effect */
+}
+.ChattyButton:hover {
+    background-color: #4169E1;
+    color: #00FFFF;
+    box-shadow: 0 0 15px rgb(17, 27, 215),
+        /* Glow effect */
+        0 0 30px rgba(255, 255, 255, 0.8);
+    /* More intense glow effect */
+}
+      .Barney-Blank { /* Failed attempt at button positioning, everything was the same it should've worked */
+        top:0%; /* Position the button to the top left | Credits to Stack Overflow users on this thread https://stackoverflow.com/questions/63541670/how-to-position-a-button-on-website-using-html-css*/
+        left:0%;
+        width:200px;
+        height:40px;
+        position: absolute;
+        z-index: 2; 
+        display: inline-block;
+        font-family: 'Verdana', Arial;
+        margin-top: 10px;
+        margin-left: 2px;
+        margin-right: 2px;
+        padding: 10px 20px;
+        background-color: #5DBD4F;
+        color: #B8FBAF;
+        border: 3px solid #A4CB7D;
+        border-radius: 25px; /* Create rounded edges */
+        font-weight: 1000;
+        font-family: Raleway;
+        /* Use the Raleway font imported from Google Fonts in the <head> for the buttons*/
+        cursor: pointer;
+        transition: all 0.3s ease;
+        /* Smooth transition for the glow effect */
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        /* Initial shadow effect */
+      }
+      
+      .Barney-Blank:Hover {
+            background-color: #BCBD4F;
+            color: #FDFDB7;
+            /*border: 4px solid #B2B56D; Fixed the buttons growing when hovered, if you want this back press ctrl + / on this line*/
+            margin-top: 5px;
+            margin-bottom: 2px;
+            box-shadow: 0 0 15px rgba(254, 255, 134, 1),
+                /* Glow effect */
+                0 0 30px rgba(254, 255, 134, 1);
+            /* More intense glow effect */
+        }
+      
+      .BarneyButton {
+      display: inline-block;
+      margin-top: 3px;
+      padding: 10.56432px 23px;
+      background-color: #5DBD4F;
+      color: #B8FBAF;
+      border: 3px solid #A4CB7D;
+      border-radius: 10000px;
+      font-weight: 1000;
+      cursor: pointer;
+     font-family: Tahoma, sans-serif;
+    transition: all 0.3s ease;
+    /* Smooth transition for the glow effect */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    /* Initial shadow effect */
+          
+      }
+        .BarneyButton:hover {
+            transition: all 0.25s ease;
+            background-color: #BCBD4F;
+            color: #FDFDB7;
+            /*border: 4px solid #B2B56D; Fixed the buttons growing when hovered, if you want this back press ctrl + / on this line*/
+            margin-top: 5px;
+            margin-bottom: 2px;
+            box-shadow: 0 0 15px rgba(254, 255, 134, 1),
+                /* Glow effect */
+                0 0 30px rgba(254, 255, 134, 1);
+            /* More intense glow effect */
+        }
+    #randomPhrase {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-weight: bold;
+      border: 2px solid #B2B56D;
+      transition: all 0.3s ease;
+    /* Smooth transition for the glow effect */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    /* Initial shadow effect */
+    border-radius: 12px;
+    }
+    #randomPhrase:Hover {
+        background-color: #BCBD4F;
+        color: #FDFDB7;
+        box-shadow: 0 0 15px rgba(254, 255, 134, 1),
+            /* Glow effect */
+        0 0 30px rgba(254, 255, 134, 1);
+            /* More intense glow effect */
+    }
+    .hidden {
+      display: none;
+    }
+    #center {
+        text-align: center;
+    }
+    /* Updated styling for the BLOCKS message with white color */
+    #blocksMessage {
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff; /* White color */
+      margin-top: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    #movingText {
+      position: absolute;
+      top: 60px;  /* Adjust according to your layout */
+      left: -100%; /* Start off the screen on the left */
+      font-size: 18px; /* Match the font size with the blocks message */
+      font-weight: bold; /* Make it bold */
+      color: #fff; /* White color */
+      text-transform: uppercase; /* Uppercase text for consistency */
+      animation: moveAcross 10s linear infinite; /* Animation settings */
+    }
+    @keyframes moveAcross {
+      0% {
+        left: -100%; /* Starting position off the left */
+      }
+      100% {
+        left: 100%; /* Ending position off the right */
+      }
+    }
+     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <!-- Moving Text -->
+  <!--<div id="movingText"></div>-->
+
+  <h1>ChattyBarney's Website</h1>
+  <h3>Welcome to ChattyBarney's website! After Chattywebsite shut down, we are now both working on this website to collaborate and start fresh.</h3>
+  <hr>
+  <h3>ChattyBarney's Website Update Log</h3>
+  <h4 id="center">New background, games, theme updates, and hover animations!</h4>
+  <button id="launchGames" class="ChattyButton">Games
+        <span class="button__icon"> <!--Create and load icons from ionicons.com-->
+            <ion-icon name="game-controller-outline"></ion-icon>
+        </span>
+    </button>
+    <button id="launchApps" class="BarneyButton">Apps
+        <span class="button__icon">
+            <ion-icon name="apps-outline"></ion-icon>
+        </span>
+    </button>
+    <!--<button id="chat" class="button">Chatroom-->
+    <!--    <span class="button__icon">-->
+    <!--        <ion-icon name="chatbox-ellipses-outline"></ion-icon>-->
+    <!--    </span>-->
+    <!--</button>-->
+    <button id="LaunchProxy" class="ChattyButton">Proxies
+        <span class="button__icon">
+            <ion-icon name="lock-open-outline"></ion-icon>
+        </span>
+        <button id="LaunchExploits" class="BarneyButton">Tools/Exploits
+        <span class="button__icon">
+            <ion-icon name="hammer-outline"></ion-icon>
+        </span>
+    </button>
+    <button id="downloads" class="ChattyButton">Downloads
+        <span class="button__icon">
+            <ion-icon name="cloud-download-outline"></ion-icon>
+        </span>
+    </button>
+        <button id="openInAboutBlank" class="Barney-Blank">About:blank Cloak
+        <span class="button__icon">
+            <ion-icon name="open-outline"></ion-icon>
+        </span>
+    </button>
+    </button>
+<div id="randomPhrase"></div>
+  <div id="instructions" class="hidden">
+    <div id="htmlCodeSection" class="hidden">
+      <h2>Custom HTML Code</h2>
+      <p>This is a placeholder for your custom HTML code. Replace this content as needed.</p>
+      <p>Example: <strong><div>Your HTML content here</div></strong></p>
+    </div>
+    <h2>READ THIS</h2>
+    <p>This is a huge work in progress. If anything gets blocked, follow these steps:<br>Restart your device (Make sure the screen turns black, do power button + refresh key on Chromebook).<br>DON'T restore tabs, open this file again, and nothing should be blocked. If it's still blocked, play the games and apps because they can't be blocked.<br>Sorry for the yapping, thanks :D - British Man</p>
+    <button id="continueButton" class="button">Continue</button>
+  </div>
+  <button id="ruffleButton" class="button hidden">Ruffle</button>
+  <audio id="idiotAudio" src="https://ia600208.us.archive.org/35/items/youareanidiotgif/You%20are%20an%20idiot%21%21.mp3" loop></audio>
+
+<script>
+  document.getElementById("launchBrowser").addEventListener("click", function() {
+    var htmlSection = document.getElementById("htmlCodeSection");
+    // Toggle visibility of the HTML section
+    htmlSection.classList.toggle("hidden");
+  });
+</script>
+<script>
+  let isUserInteracted = false; // Function for the confirm leave to bypass extensions that redirect the user
+
+        // Add event listeners for user interactions
+        document.addEventListener('click', () => {
+            isUserInteracted = true;
+        });
+
+        document.addEventListener('keydown', () => {
+            isUserInteracted = true;
+        });
+
+        window.addEventListener('beforeunload', (event) => {
+            if (isUserInteracted) {
+                // Display a confirmation dialog
+                event.preventDefault(); // Necessary for some browsers
+                event.returnValue = ''; // Triggers the confirmation dialog
+            }
+        });
+
+document.addEventListener("DOMContentLoaded", function() {
+    var phrases = [
+      "Guys i think Chattyice likes roblox pressure. Just an inference, im not fully sure",
+      "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "Ur computer has virus",
+      "Sponsored by.... Nobody :D",
+      "Bro u gotta lock in - Josh",
+      "(â•¯Â°â–¡Â°)â•¯ï¸µ â”»â”â”»",
+      "à² _à² ",
+      "(ï¾‰à²¥ç›Šà²¥ï¼‰ï¾‰ â”»â”â”»",
+      "áƒš(à² ç›Šà² )áƒš",
+      ":D",
+      "( Í¡Â° ÍœÊ– Í¡Â° )",
+      "â˜‰_â˜‰",
+      "ãƒ»_ãƒ»",
+      "ãƒ½à¼¼ à² ç›Šà²  à¼½ï¾‰",
+      "á•™(â€¢Ì€â€¸â€¢Ìâ€¶)á•—",
+      "-_-",
+      ":0",
+      "ERROR - SRC=TROJAN_VIRUS.EXE_RUNFILE NOT FOUND",
+      "Shell shockers please work please work please work please work please work",
+      "Chat is this real?",
+      "100% Legit Robux Vbucks Cracked Minecraft download 100% no scam real",
+      "GTA 6 free download! ------>",
+      "URLS are overrated >:l",
+      "Like the last website, but without freaky stuff!",
+      "No i'm not adding freaky stuff to this site stay mad",
+      "Me after seeing the 10th goofy ahh ripoff this week",
+      "Wow, today was really the craziest plot twist. This was written on 1/29/2025. Basically me and chatty got called up to the office and we thought we got in troube but we actually didn't! Our principal said our coding was cool and innovative. Whoever sent the death threats on the forms wil recieve consequences",
+      "Crazy? I was crazy once. they locked me in a room. A rubber room. A rubber room with rats. And rats make me crazy. Crazy? I was crazy once. they locked me in a room. A rubber room. A rubber room with rats. And rats make me crazy. Crazy? I was crazy once. they locked me in a room. A rubber room. A rubber room with rats. And rats make me crazy. Crazy? I was crazy once. they locked me in a room. A rubber room. A rubber room with rats. And rats make me crazy. Crazy? I was crazy once. they locked me in a room. A rubber room. A rubber room with rats. And rats make me crazy. ",
+      "Probably not coded by ChatGPT"
+    ];
+
+      var randomIndex = Math.floor(Math.random() * phrases.length);
+      var randomPhrase = phrases[randomIndex];
+      document.getElementById("randomPhrase").textContent = randomPhrase;
+    });
+
+    document.getElementById("launchGames").onclick = function() {
+      document.body.innerHTML = "";
+      setTimeout(function() {
+        var games = [
+          { name: "Google", url: "https://google.com/?igu=1" },
+          { name: "Ae Games", url: "https://aeg.zya.me/GG3.html/" },
+  { name: "Burrito Bison", url: "https://mcpshomeworkhelp-wixsite-com.filesusr.com/html/5378fb_eef382ca8b60fdf11be05f87d6b9f5eb.html" },  
+  { name: "Tye of link", url: "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/ixl-classroom/attach/29dd9d06d1387/lithium.xml?part=0.1&view=1&container=ig" },  
+  { name: "Skibidi Toilet", url: "https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://147294106-271957305593713958.preview.editmysite.com/uploads/b/146211889-736862448591698921/files/stio.xml&container=ig" },  
+  { name: "Tiny Fishing", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://72682389-756457502729861133.preview.editmysite.com/uploads/b/11886820-896015480911618794/files/tf.xml&container=ig" },  
+  { name: "The Final Earth 2", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://529473016-184630684593625815.preview.editmysite.com/uploads/b/139890129-811652923688457694/files/tfe2.xml&container=ig" },  
+  { name: "Slope", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/WebStarterkit@ebc61d8a952e7630c8c5ca3410335bf5d5f04711/src/sp.xml&container=ig" },  
+  { name: "World's Hardest Game", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Fthe-world-s-hardest-game.xml&container=ig" },  
+  { name: "Super Hot", url: "https://a6936-20249810.cluster7.canvas-user-content.com/courses/6936~1014013/files/6936~20249810/course%20files/superhot/index.html?download=1&inline=1" },  
+  { name: "There Is No Game", url: "https://a6936-20098220.cluster7.canvas-user-content.com/courses/6936~1014013/files/6936~20098220/course%20files/there%20is%20no%20game/index.html?download=1&inline=1" },  
+  { name: "Cookie Clicker", url: "https://a6936-19424025.cluster7.canvas-user-content.com/courses/6936~1014013/files/6936~19424025/course%20files/cookie%20clicker/index.html?download=1&inline=1" },  
+  { name: "Time Shooter 2", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/element@1dd0b99d2004b84795f2745a5eb3468deb1c38a4/ts2.xml&container=ig" },  
+  { name: "Time Shooter 3", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/version@0d8fb9c7430567ed0900902593eee6ba2ba8d297/ts3.xml&container=ig" },  
+  { name: "Subway Surfers", url: "https://a6936-19375562.cluster7.canvas-user-content.com/courses/6936~1010708/files/6936~19375562/course%20files/vfcd/index.html" },  
+  { name: "Retro Bowl", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://274079163-174037128449362058.preview.editmysite.com/uploads/b/139890129-899796311729593176/files/rtbl.xml&container=ig" },  
+  { name: "Fallerz.io", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/gertdoro/learning-Python-3@4abaa4be3df458528ebc4487dcfe6b1c49d4ee7d/notebooks/fall.xml&container=ig" },  
+  { name: "Tetris", url: "https://dionyziz.com/graphics/canvas-tetris/" },  
+  { name: "Snow Rider 3D", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/89574567@71f165531792ae450fe0a522a52ba4e827344de2/sr3d.xml&container=ig" },  
+  { name: "Eggy Car", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://googleusercontent.b-cdn.net/eggy-car/ec.xml&container=ig" },  
+  { name: "Snowball.io", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/gertdoro/SQLite4Unity3d@8516fc0bd1d2be662ca484f5dc506268b24763ef/Example/Assets/snowball.xml&container=ig" },  
+  { name: "Moving Co.", url: "https://movingco.h5games.usercontent.goog/v/8fe98e0f-b1b7-4fc6-8023-200af0320f20/?origin=https%3A%2F%2Fgamesnacks.com&gameCenterId=yt&userActivityMetrics=true&eids=95340509&features=InterstitialFreqCap__freq_cap_60s%2CInterstitialFreqCap__block_pga_1m_interstitials%2CMonetization__populate_google_global_correlator%2CMonetization__use_ppabg_tag#pc=3401423534985718&preStart=1726706962732" },  
+  { name: "Snowdown Showdown", url: "https://educate.stemfuse.com/sf-serve/76/snowdown_showdown/index.html?class_id=&course_id=&active=" },  
+  { name: "Johnny Trigger", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/yrgen73/Jtrigger@3d4eb8d328bab8af057daa77acd4cee7608f1ec1/jt.xml&container=ig" },  
+  { name: "Elastic Face", url: "https://d21u3ic0kp9e91.cloudfront.net/elasticman/0/index.html" },  
+  { name: "n-gon", url: "https://d272xss3wq00xu.cloudfront.net/n-gon/index.html" },  
+  { name: "Craft Mine", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@bdd7d45deaeaa50131e1913f2f0598cf147f8c56/build/crmine/crmi.xml&container=ig" },  
+  { name: "Stack Bounce", url: "https://stackbounce.h5games.usercontent.goog/v/1aqsvv0aegbjg/?origin=https%3A%2F%2Fgamesnacks.com&gameCenterId=yt&userActivityMetrics=true&eids=95340509&features=InterstitialFreqCap__freq_cap_60s%2CInterstitialFreqCap__block_pga_1m_interstitials%2CMonetization__populate_google_global_correlator%2CMonetization__use_ppabg_tag#pc=4279443280740350&preStart=1726705971318&gameData=eyJsb2dsZXZlbCI6IkVSUk9SIiwiY2xldmVsQ3VycmVudCI6IjYiLCJjYmVzdFNjb3JlIjoiMTAxMTUiLCJjc3R5bGVJRCI6IjMiLCJjY2hvc2VuU2tpbklkIjoiMCIsImNwbGF0Zm9ybXNCcm9rZW5Ub3RhbCI6IjczMyIsImNsZXZlbC5yaW5nVHlwZUlEIjoiMyIsImNsZXZlbC5yaW5nc0NvdW50IjoiMjAwIiwiY2xldmVsLnJpbmdTY2FsaW5nIjoiMCJ9" },  
+  { name: "Minecraft Parkour", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/9ecda005-11e9-4b52-ab9e-700b4d46d00f%2Fminep.xml&container=ig" },  
+  { name: "2048", url: "https://d272xss3wq00xu.cloudfront.net/2048/index.html" },  
+  { name: "Only Up Ball", url: "https://d272xss3wq00xu.cloudfront.net/a/index.html" },  
+  { name: "Pocket Battle Royale", url: "https://pocketbattleroyale.h5games.usercontent.goog/v/7a1tg7kmi4mfg/?origin=https%3A%2F%2Fgamesnacks.com&gameCenterId=yt&userActivityMetrics=true&eids=95340509&features=InterstitialFreqCap__freq_cap_60s%2CInterstitialFreqCap__block_pga_1m_interstitials%2CMonetization__populate_google_global_correlator%2CMonetization__use_ppabg_tag#pc=30652399916874&preStart=1726706652900" },  
+  { name: "Adventure Drivers", url: "https://d272xss3wq00xu.cloudfront.net/adventure-drivers/index.html" },  
+  { name: "Angry Birds", url: "https://d272xss3wq00xu.cloudfront.net/angrybirds/index.html" },  
+  { name: "Aquapark Slides", url: "https://d272xss3wq00xu.cloudfront.net/aquapark-slides/index.html" },  
+  { name: "Backrooms", url: "https://d272xss3wq00xu.cloudfront.net/backrooms/index.html" },  
+  { name: "Bacon May Die", url: "https://d272xss3wq00xu.cloudfront.net/bacon-may-die/index.html" },  
+  { name: "Ball Hop", url: "https://d272xss3wq00xu.cloudfront.net/Ball-Hop/index.html" },  
+  { name: "Ballistic", url: "https://d272xss3wq00xu.cloudfront.net/ballistic/index.html" },  
+  { name: "You Are Jeff Bezos", url: "https://d272xss3wq00xu.cloudfront.net/bezos/index.html" },  
+  { name: "BitLife", url: "https://d272xss3wq00xu.cloudfront.net/bitlife/index.html" },  
+  { name: "Bottle Flip", url: "https://d272xss3wq00xu.cloudfront.net/bottle-flip-3d/index.html" },  
+  { name: "Bottle Flip 3D", url: "https://d272xss3wq00xu.cloudfront.net/bottle-flip/index.html" },  
+  { name: "Candy Crush Saga", url: "https://d272xss3wq00xu.cloudfront.net/candycrushsaga.html" },  
+  { name: "Cars Simulator", url: "https://d272xss3wq00xu.cloudfront.net/cars-simulator/index.html" },  
+  { name: "Chrome Dino", url: "https://d272xss3wq00xu.cloudfront.net/chrome-dino/index.html" },  
+  { name: "Clicker Heroes", url: "https://d272xss3wq00xu.cloudfront.net/clicker-heroes/index.html" },  
+  { name: "Make Sure It's Closed", url: "https://d272xss3wq00xu.cloudfront.net/closed/index.html" },  
+  { name: "Cluster Rush", url: "https://d272xss3wq00xu.cloudfront.net/cluster-rush/index.html" },  
+  { name: "Cooking Frenzy", url: "https://d272xss3wq00xu.cloudfront.net/bitlife/index.html" },  
+  { name: "Crazy Cars", url: "https://d272xss3wq00xu.cloudfront.net/crazy-cars/index.html" },  
+  { name: "Crossy Road", url: "https://d272xss3wq00xu.cloudfront.net/crossyroad/index.html" },  
+  { name: "CS:GO Clicker", url: "https://d272xss3wq00xu.cloudfront.net/csgoclicker/index.html" },  
+  { name: "Cut The Rope", url: "https://d272xss3wq00xu.cloudfront.net/cuttherope-Timetravel/index.html" },  
+  { name: "Epic Stunt Cars", url: "https://d272xss3wq00xu.cloudfront.net/d/index.html" },  
+  { name: "Deal Or No Deal", url: "https://d272xss3wq00xu.cloudfront.net/deal-or-no-deal/index.html" },  
+  { name: "Doodle Jump", url: "https://d272xss3wq00xu.cloudfront.net/doodle-jump/index.html" },  
+  { name: "Draw The Hill", url: "https://d272xss3wq00xu.cloudfront.net/draw-the-hill/index.html" },  
+  { name: "Drift Boss", url: "https://d272xss3wq00xu.cloudfront.net/drift-boss/index.html" },  
+  { name: "Drive Mad", url: "https://d272xss3wq00xu.cloudfront.net/drivemad/index.html" },  
+  { name: "Duck Life 4", url: "https://d272xss3wq00xu.cloudfront.net/ducklife4/index.html" },  
+  { name: "Tap Tap Shots", url: "https://d272xss3wq00xu.cloudfront.net/e/index.html" },  
+  { name: "Edge Surf", url: "https://d272xss3wq00xu.cloudfront.net/edge-surf/index.html" },  
+  { name: "Eel Slap", url: "https://d272xss3wq00xu.cloudfront.net/eel-slap/index.html" },  
+  { name: "Eggy Car", url: "https://d272xss3wq00xu.cloudfront.net/eggy-car/index.html" },  
+  { name: "Fake Virus", url: "https://d272xss3wq00xu.cloudfront.net/fake-virus/index.html" },  
+  { name: "Flappy Bird", url: "https://d272xss3wq00xu.cloudfront.net/FNAF4/index.html" },  
+  { name: "FNAF 4", url: "https://d272xss3wq00xu.cloudfront.net/flappy-bird/index.html" },  
+  { name: "Football Legends", url: "https://d272xss3wq00xu.cloudfront.net/football-legends/index.html" },  
+  { name: "Football Strike", url: "https://d272xss3wq00xu.cloudfront.net/football-strike/index.html" },  
+  { name: "Fruit Ninja", url: "https://d272xss3wq00xu.cloudfront.net/fruitninja/index.html" },  
+  { name: "Geometry Dash", url: "https://d272xss3wq00xu.cloudfront.net/geometry-dash/index.html" },  
+  { name: "Geometry Dash Lite", url: "https://d272xss3wq00xu.cloudfront.net/geometrydash/index.html" },  
+  { name: "Getting Over It", url: "https://d272xss3wq00xu.cloudfront.net/getting-over-it/index.html" },  
+  { name: "Glass City", url: "https://d272xss3wq00xu.cloudfront.net/glass-city/index.html" },  
+  { name: "Google Feud", url: "https://d272xss3wq00xu.cloudfront.net/google-feud/index.html" },  
+  { name: "Google Snake", url: "https://d272xss3wq00xu.cloudfront.net/googlesnake.html" },  
+  { name: "G-Switch 3", url: "https://d272xss3wq00xu.cloudfront.net/gswitch-3/index.html" },  
+  { name: "Hop Pop It", url: "https://d272xss3wq00xu.cloudfront.net/hop-pop-it/index.html" },  
+  { name: "Idle Restaurants", url: "https://d272xss3wq00xu.cloudfront.net/idle-restaurants/index.html" },  
+  { name: "The Impossible Quiz", url: "https://d272xss3wq00xu.cloudfront.net/impossiblequiz/index.html" },  
+  { name: "Jetpack Joyride", url: "https://d272xss3wq00xu.cloudfront.net/jetpack-joyride/index.html" },  
+  { name: "Lemonade Stand", url: "https://d272xss3wq00xu.cloudfront.net/lemonadestand.html" },  
+  { name: "New Super Mario Bros", url: "https://d272xss3wq00xu.cloudfront.net/mario-bros/index.html" },  
+  { name: "Super Mario Bros", url: "https://d272xss3wq00xu.cloudfront.net/mario/index.html" },  
+  { name: "Masked Special Forces", url: "https://d272xss3wq00xu.cloudfront.net/maskedspecialforces/index.html" },  
+  { name: "Minecraft 1.5", url: "https://d272xss3wq00xu.cloudfront.net/minecraft-15/index.html" },  
+  { name: "Minecraft 1.8", url: "https://d272xss3wq00xu.cloudfront.net/minecraft-18/index.html" },  
+  { name: "Minecraft Case", url: "https://d272xss3wq00xu.cloudfront.net/minecraft-case/index.html" },  
+  { name: "Minesweeper", url: "https://d272xss3wq00xu.cloudfront.net/minesweeper/index.html" },  
+  { name: "Moto X3M", url: "https://d272xss3wq00xu.cloudfront.net/Moto-X3M/index.html" },  
+  { name: "Mr. Bullet", url: "https://d272xss3wq00xu.cloudfront.net/mr-bullet/index.html" },  
+  { name: "Nut Simulator", url: "https://d272xss3wq00xu.cloudfront.net/nut-simulator/index.html" },  
+  { name: "osu!", url: "https://d272xss3wq00xu.cloudfront.net/osu.html" },  
+  { name: "OvO 2", url: "https://d272xss3wq00xu.cloudfront.net/ovo-2/index.html" },  
+  { name: "Pacman", url: "https://d272xss3wq00xu.cloudfront.net/pacman/index.html" },  
+  { name: "Papa's Scooperia", url: "https://d272xss3wq00xu.cloudfront.net/papasscooperia/index.html" },  
+  { name: "Paper Minecraft", url: "https://d272xss3wq00xu.cloudfront.net/paper-minecraft/index.html" },  
+  { name: "Paper.io 3", url: "https://d272xss3wq00xu.cloudfront.net/paperio3.html" },  
+  { name: "Papery Planes", url: "https://d272xss3wq00xu.cloudfront.net/papery-planes/index.html" },  
+  { name: "Plants vs Zombies", url: "https://d272xss3wq00xu.cloudfront.net/plantsvszombies/plants%20vs%20zombies.html" },  
+  { name: "Popcat", url: "https://d272xss3wq00xu.cloudfront.net/popcat/index.html" },  
+  { name: "Rise Higher", url: "https://d272xss3wq00xu.cloudfront.net/risehigher/index.html" },  
+  { name: "Rocket League", url: "https://d272xss3wq00xu.cloudfront.net/Rocket-League/index.html" },  
+  { name: "Scrap Metal 3", url: "https://d272xss3wq00xu.cloudfront.net/scrapmetal/index.html" },  
+  { name: "Skibidi Strike", url: "https://d272xss3wq00xu.cloudfront.net/skibidi-strike/index.html" },  
+  { name: "Slope 2", url: "https://d272xss3wq00xu.cloudfront.net/slope-2/index.html" },  
+  { name: "Super Mario 64", url: "https://d272xss3wq00xu.cloudfront.net/sm64/index.html" },  
+  { name: "Smash Karts", url: "https://d272xss3wq00xu.cloudfront.net/smashkarts/index.html" },  
+  { name: "Sniper Shot", url: "https://d272xss3wq00xu.cloudfront.net/sniper-shot/index.html" },  
+  { name: "Soccer Heads", url: "https://d272xss3wq00xu.cloudfront.net/soccer-heads/index.html" },  
+  { name: "Soundboard", url: "https://d272xss3wq00xu.cloudfront.net/soundboard/index.html" },  
+  { name: "Space Company", url: "https://d272xss3wq00xu.cloudfront.net/space-company/index.html" },  
+  { name: "Stack Bump 3D", url: "https://d272xss3wq00xu.cloudfront.net/stack-bump-3d/index.html" },  
+  { name: "Stack", url: "https://d272xss3wq00xu.cloudfront.net/stack/index.html" },  
+  { name: "Stack Ball", url: "https://d272xss3wq00xu.cloudfront.net/stackball/index.html" },  
+  { name: "Stickman Hook", url: "https://d272xss3wq00xu.cloudfront.net/stickman-hook/index.html" },  
+  { name: "Stickman Survival", url: "https://d272xss3wq00xu.cloudfront.net/Stickman-Survival/index.html" },  
+  { name: "Super Mario Run", url: "https://d272xss3wq00xu.cloudfront.net/supermariorun.html" },  
+  { name: "Tactical Assasin 2", url: "https://d272xss3wq00xu.cloudfront.net/tacticalassasin2/index.html" },  
+  { name: "Temple Run 2", url: "https://d272xss3wq00xu.cloudfront.net/temple-run-2/index.html" },  
+  { name: "Territorial", url: "https://d272xss3wq00xu.cloudfront.net/territorial.html" },  
+  { name: "Tunnel Rush", url: "https://d272xss3wq00xu.cloudfront.net/tunnel-rush/index.html" },  
+  { name: "Vex 7", url: "https://d272xss3wq00xu.cloudfront.net/vex7/index.html" },  
+  { name: "Wordle", url: "https://d272xss3wq00xu.cloudfront.net/wordle/index.html" },  
+  { name: "Yohoho", url: "https://d272xss3wq00xu.cloudfront.net/yohoho/index.html" },  
+  { name: "Gun Spin", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/RobiFet/workflow@60b41ef8c9123ae41b86bf04c9b39e1a5713aaa9/bin/gs.xml&container=ig" },  
+  { name: "Rooftop Snipers", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/version@f8de953e5d955baef80e3994a1105d74ad76315b/Rooftop-Snipers.xml&container=ig" },  
+  { name: "Basket Random", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/classroom-google-new/google.net@main/newgoogletrendd.xml&container=ig" },  
+  { name: "Hole.io", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/gertdoro/Toolkit@93a27eabbbe5eb626af5b9b7dd0926ac16810a41/Code/Java/hole.xml&container=ig" },  
+  { name: "Snake", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://26515722-282596139816136697.preview.editmysite.com/uploads/b/7547235-562404422326578714/files/sis.xml&container=ig" },  
+  { name: "Vex 5", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@dae52f4583f3cc7612451ea7f02965aeff6077bf/build/v5/v5.xml&container=ig" },  
+  { name: "Cookie Clicker", url: "https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@0d9afabd2522344a702e1b692ad58039f6290b0d/build/c-c/cc.xml&container=ig" },  
+  { name: "Tomb Of The Mask", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/element@9cccb2fafb569c963501a5d818472b561121cea6/totm.xml&container=ig" },  
+  { name: "Work Madness", url: "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/54r7m5resdndren65dx/attach/27a7a2ce95d5c/google.xml?part=0.1&view=1&container=ig" },  
+  { name: "Monster Truck Race", url: "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/54r7m5resdndren65dx/attach/27f7898b1dc1b/yyyy.xml?part=0.1&view=1&container=ig" },  
+  { name: "Geometry Dash 3D", url: "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/54r7m5resdndren65dx/attach/54029c83177b1/geyee.xml?part=0.1&view=1&container=ig" },  
+  { name: "Cyber Cars", url: "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/54r7m5resdndren65dx/attach/b14b0568a59ba/yu7tc.xml?part=0.1&view=1&container=ig" },  
+  { name: "Aquapark Cars", url: "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/54r7m5resdndren65dx/attach/ad1b0f5720964/bbbgf.xml?part=0.1&view=1&container=ig" },  
+  { name: "Aim Trainer", url: "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/54r7m5resdndren65dx/attach/27a856ab4f4d3/google.xml?part=0.1&view=1&container=ig" },  
+  { name: "Zombie Exploder", url: "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/54r7m5resdndren65dx/attach/27a8f79c6acbe/google.xml?part=0.1&view=1&container=ig" },  
+  { name: "Mortal Kombat", url: "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/54r7m5resdndren65dx/attach/27aa8c8fdd5ac/google.xml?part=0.1&view=1&container=ig" },  
+  { name: "Electric Man", url: "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/54r7m5resdndren65dx/attach/27ab7e09f8875/google.xml?part=0.1&view=1&container=ig" },  
+  { name: "Bounzy 2", url: "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/54r7m5resdndren65dx/attach/27ad4a72a840f/google.xml?part=0.1&view=1&container=ig" },  
+  { name: "Ambulance Rush", url: "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/54r7m5resdndren65dx/attach/27acba29ab944/google.xml?part=0.1&view=1&container=ig" },  
+  { name: "Russians Drive", url: "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/54r7m5resdndren65dx/attach/ac5505094336e/z64.xml?part=0.1&view=1&container=ig" },  
+  { name: "OvO", url: "https://s6jf3nx0gk1d6n-opensocial.googleusercontent.com/gadgets/ifr?url=https://427396048-642845047394716217.preview.editmysite.com/uploads/b/139890129-761103484729797659/files/ovof.xml&container=ig" },  
+  { name: "OvO 2", url: "https://s6jf3nx0gk1d6n-opensocial.googleusercontent.com/gadgets/ifr?url=https://googleusercontent.b-cdn.net/ovo2/ovo2.xml&container=ig" },  
+  { name: "Proxy Links", url: "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/u/6/group/google-forms-work/attach/6e87fda052412/googlecom.xml?part=0.1&view=1&authuser=6&container=ig" },  
+  { name: "Do Not Stop", url: "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/classroom-management/teacher@main/dotgoogle.xml&container=ig" },  
+  { name: "BitLife", url: "https://d272xss3wq00xu.cloudfront.net/bitlife/index.html" },  
+  { name: "Helix Jump", url: "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/u/6/group/54r7m5resdndren65dx/attach/a634c8ae323d5/h4643.xml?part=0.1&view=1&authuser=6&container=ig" },  
+  { name: "Pixel Shooter", url: "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/group/classroomgoogl-net/attach/99c0874f1098d/zy55555.xml?part=0.1&view=1&container=ig" },  
+  { name: "Highway Rider Extreme", url: "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/234sd4w5w45wers5tr-645758574456456/9900@main/5234234.xml?part=0.1&view=1&container=ig" },  
+  { name: "Paper IO 2", url: "https://d272xss3wq00xu.cloudfront.net/paperio2/index.html" },  
+  { name: "Paper IO 3", url: "https://d272xss3wq00xu.cloudfront.net/paperio3.html" },  
+  { name: "Acid Rain", url: "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Facid-rain.xml&container=ig" },  
+  { name: "UNO!", url: "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/gertdoro/UnityPy@388b260053eaa47c3ac01b18c66d5508c6cfe231/tests/samples/uno.xml&container=ig" },  
+  { name: "Elastic Face", url: "https://s6jf3nx0gk1d6n-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/godotpack@e2eaacc90db7a760867d838a1224e490a92da39b/side/eman/face.xml&container=ig" },  
+  { name: "Hill Climbing", url: "https://s6jf3nx0gk1d6n-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bessiegasbarro/HCR@402cc488704523b469aa22506bf4c6c2207097c4/hcr.xml&container=ig" },  
+  { name: "3D Block Builder", url: "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/classroom-management/tyt@main/google.net.xml?part=0.1&view=1&container=ig" },  
+  { name: "Basketball Shooter", url: "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/yrgen73/BSD2@b5104af0b3a445248e829ff728017e5cc40d72e8/bsd2.xml?part=0.1&view=1&container=ig" },  
+  { name: "Bouncy Rush", url: "https://classroom-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/gertdoro/UnityExplorer@f5d8c1af690a04f18c72ae56dad76e216b6ecbf2/CacheObject/Bouncy.xml&container=ig" },  
+  { name: "Agar IO lite", url: "https://d272xss3wq00xu.cloudfront.net/agario.html" },  
+  { name: "Mario Party 4", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/f107b843-3661-4036-9397-2b0c6414a369%2Fmarioparty4.xml&container=ig" },  
+  { name: "Dead Zed", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Fdead_zed.xml&container=ig" },  
+  { name: "Galaga", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Fgalaga.xml&container=ig" },  
+  { name: "Riddle School 1", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Friddle-school.xml&container=ig" },  
+  { name: "Obby Robby", url: "https://qrvqrzbrdnhtbikofnemykr8-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/9ecda005-11e9-4b52-ab9e-700b4d46d00f%2Fobby.xml&container=ig" },  
+  { name: "Soccer Random", url: "https://azqjxdsdtqfbdwfvzlny3kgl-opensocial.googleusercontent.com/gadgets/ifr?url=https://471058263-725410472258601738.preview.editmysite.com/uploads/b/139890129-510930859892590631/files/sr.xml&container=ig" },  
+  { name: "Save My Pet", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/nurimoores/DataSources@9f54c673948151d03a62f5e63c67efaf558759ab/smp.xml&container=ig" },  
+  { name: "Noob Miner", url: "https://my79w0vvvo1to8nev0pnvq08-opensocial.googleusercontent.com/gadgets/ifr?url=https://428048613-274630817493625816.preview.editmysite.com/uploads/b/139890129-289556751581345554/files/nm.xml&container=ig" },  
+  { name: "Soccer Skills", url: "https://aa6hthgbtn19gwwl28pelv1q-opensocial.googleusercontent.com/gadgets/ifr?url=https://471904738-852049328537117493.preview.editmysite.com/uploads/b/139890129-154348492386095606/files/ssee.xml&container=ig" },  
+  { name: "Death Run 3D", url: "https://sv2emrfgjawywpy44osygatn-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/version@93f7f60b0f054c956ca9b6622f2daeeeb450632c/death_run.xml&container=ig" },  
+  { name: "Noob vs Pro", url: "https://bdjfc7hca56th6oqeynmkizy-opensocial.googleusercontent.com/gadgets/ifr?url=https://374610594-153905749316385925.preview.editmysite.com/uploads/b/139890129-538277031118477931/files/nvp.xml&container=ig" }, 
+
+        //   { name: "test", url: "" },
+        // CUT BCW some slack and stop STEALING HIS CODE xoxo BIGFISHGAMING :)
+        ];
+        var container = document.createElement("div");
+        container.setAttribute("id", "gamesContainer");
+        document.body.appendChild(container);
+
+        var lowestButtonPosition = 0; // Initialize with 0
+
+        games.forEach(function(game) {
+            var button = document.createElement("button");
+            button.textContent = game.name;
+            button.className = "ChattyButton";
+            button.onclick = function() {
+                // Hide all buttons
+                document.querySelectorAll('.button').forEach(function(element) {
+                    element.style.display = "none";
+                });
+
+                document.getElementById("gamesContainer").innerHTML = '<object id="' + game.name.replace(/ /g, "") + 'Frame" type="text/html" data="' + game.url + '" style="width: 100%; height: 100vh;"></object>';
+            };
+            container.appendChild(button);
+
+            // Update lowestButtonPosition
+            var buttonPosition = button.offsetTop + button.offsetHeight;
+            if (buttonPosition > lowestButtonPosition) {
+                lowestButtonPosition = buttonPosition;
+            }
+        });
+
+        // Add "Request a game" button
+        var requestButton = document.createElement("button");
+        requestButton.textContent = "Request a game/Report A Bug (OGSD ONLY)";
+        requestButton.className = "ChattyButton";
+        requestButton.style.position = "absolute";
+        requestButton.style.top = (lowestButtonPosition + 90) + "px"; // Position 90px below the lowest button
+        requestButton.style.left = "50%";
+        requestButton.style.transform = "translateX(-50%)";
+        requestButton.onclick = function() {
+            document.body.innerHTML = '<object id="requestGameForm" type="text/html" data="https://docs.google.com/forms/d/e/1FAIpQLSd1BrRLCHOddelS-tQROFuUZorTyY0qZ5yZ_yPhvk9YZ5Qurg/viewform?embedded=true" style="width: 100%; height: 100vh;"></object>';
+        };
+        document.body.appendChild(requestButton);
+
+    }, 1000);
+};
+
+document.getElementById("launchApps").onclick = function() {
+    document.body.innerHTML = "";
+    setTimeout(function() {
+        var apps = [
+            { name: "HTML.cafe Editor & Gallery", url: "https://html.cafe/" },   
+          { name: "Visual Studio Code", url: "https://html.cafe/x3e7b1ae9" }, 
+          { name: "Search Blocked Github repositories (Credits to Dinguschan-owo on Github)", url: "https://github-repository-search-two.vercel.app/" },
+          { name: "DingusTerminal (Credits to Dinguschan-owo on Github)", url: "https://dingus-terminal.vercel.app/" },
+          { name: "Dinguschan's Blocking Extension Checker", url: "https://installed-blocking-extension-checker.vercel.app/" },
+          { name: "Youtube ( no restrictions :D )", url: "https://www.edu-apps.org/lti_public_resources#/youtube/search" },
+          { name: "YT Alt", url: "https://piped.video" },
+          { name: "ChatGPT", url: "https://dfs3rzq44v6as.cloudfront.net/apps/27ca35c4-2604-4054-b790-b9436b00d06b/?usr-img=../../assets/img/user.webp" },
+          { name: "DeepAI", url: "https://deepai.org/" },
+          { name: "Appetize.io Android Phone", url: "https://appetize.io/embed/xc1w6f1krd589zhp22a0mgftyw?autoplay=false&debug=true&device=pixel4&embed=true&launchUrl=exp%3A%2F%2Fexp.host%2F%40snack%2Fsdk.46.0.0-ghV0%21Qgb8N&scale=65&screenOnly=false&xDocMsg=true&xdocMsg=true&params=%7B&osVersion=11.0&deviceColor=black" },
+          { name: "HTML Website Extractor", url: "https://codebeautify.org/source-code-viewer" },
+          { name: "Gaming Clock", url: "https://html.cafe/x6254d0db" },
+          { name: "Virtual Machine 3 mins", url: "https://www.browserling.com/virtual-browser" },
+          { name: "Virtual Machine 2", url: "https://copy.sh/v86/" },
+          { name: "Gauth Math Helper", url: "https://gauthmath.com" },
+          { name: "ChatGPT With Sources (signup needed)", url: "https://popai.pro/" },
+          { name: "Calculator", url: "https://desmos.com/scientific" },
+          { name: "Windows 10 Emulator", url: "https://dustinbrett.com/" },
+          { name: "AaronOS", url: "https://aaronos.dev/" },
+          { name: "Windows 96", url: "https://windows96.net/" },
+          { name: "Real Windows 11 in browser", url: "https://app.apponfly.com/trial" },
+          { name: "AI Image Generator", url: "https://nuelink.com/tools/ai-image-generator" },
+          { name: "Global Image URL Generator", url: "https://html.cafe/x2a36ad24"},
+          { name: "ChatGPT Alt", url: "https://talkai.info/" },
+          { name: "YT to mp3", url: "https://ezmp3.cc" },
+          { name: "PlayCode.io", url: "https://playcode.io" },
+          { name: "YT to MP3 2 (Cobalt.tools)", url: "https://cobalt.tools" },
+          { name: "HTML Editor and Downloader", url: "https://html.cafe/x978c906e" },
+          { name: "Screen Recorder", url: "https://html.cafe/xf7a71dd8" },
+          { name: "Image URL Generator 2", url: "https://www.imghippo.com/" },
+          { name: "JMW AI Chat", url: "https://infinitetutoring.com.au/history/src/AI" },
+          { name: "Convert URL to blob: URL (Credits to dinguschan-owo on GitHub)", url: "https://html.cafe/xdd7e491d" },
+          { name: "Notepad in JS", url: "https://notepad.js.org/index.html" },
+          { name: "Proxy Link Creator", url: "https://censordodge.com" },
+          { name: "Make a proxy link with Koyeb", url: "https://html.cafe/x7836dbf6" },
+          { name: "Bypass Ad Links (Lootdest)", url: "https://bypass.city" },
+          { name: "Ionicons", url: "https://ionicons.com" },
+          { name: "Message Encoder/Decoder (Credits to Dinguschan-owo on Github)", url: "https://encoder-decoder-nine.vercel.app/" },
+          { name: "EmulatorJS", url: "https://demo.emulatorjs.org/" },
+          { name: "Syntaxmeets", url: "https://syntaxmeets.vercel.app/" },
+          { name: "Totally works :333", url: "https://artclass.site/" },{ name: "Google play store", url: "https://nowgg.lol/apps/uncube/7074/now.html" },
+            { name: "Youtube ( no restrictions :D )", url: "edu-apps.org/lti_public_resources#/youtube" },
+            { name: "Chatgpt", url: "https://chatgptis.org/" },
+            { name: "Zerogpt", url: "https://www.zerogpt.com/" },
+            { name: "DeepAI", url: "https://deepai.org/" },
+            { name: "EmulatorJS", url: "https://demo.emulatorjs.org/" },
+            { name: "Test", url: "https://y99.in/r/1937749" },
+            { name: "Ruffle ( flash games emulator )", action: function() {
+                document.body.innerHTML = '<object id="ruffleFrame" type="text/html" data="https://ruffle.rs/demo/" style="width: 100%; height: 100vh;"></object>';
+            }}
+        ];
+
+        var container = document.createElement("div");
+        container.setAttribute("id", "appsContainer");
+        document.body.appendChild(container);
+
+        apps.forEach(function(app) {
+            var button = document.createElement("button");
+            button.textContent = app.name;
+            button.className = "BarneyButton";
+            button.onclick = function() {
+                if (app.url) {
+                    document.body.innerHTML = '';
+                    var messageText = document.createElement("p");
+                    messageText.textContent = app.message;
+                    messageText.style.color = "#fff";
+                    messageText.style.marginTop = "20px";
+                    document.body.appendChild(messageText);
+                    document.body.innerHTML = '<object id="appsFrame" type="text/html" data="' + app.url + '" style="width: 100%; height: 100vh;"></object>';
+                } else if (app.action) {
+                    app.action();
+                }
+            };
+            container.appendChild(button);
+        });
+    }, 1000);
+};
+
+document.getElementById("LaunchProxy").onclick = function() {
+document.body.innerHTML = "<h3>Loading...<h3>";
+setTimeout(function() {
+  document.body.innerHTML = "";
+  var proxy = [
+      { name: "ByeBlocker Proxy Browser", url: "https://html.cafe/xfe3a414c" },
+      { name: "Helios Proxy Browser (Credits to dinguschan-owo on Github)", url: "https://helios-browser.vercel.app" },
+      { name: "Dingus Proxy Browser (Credits to dinguschan-owo on Github)", url: "https://dinguschan-owo.github.io/dingusproxy/" },
+      { name: "Ultraviolet", url: "https://dfs3rzq44v6as.cloudfront.net/#/prxy" },
+      { name: "BlockAway", url: "https://cdn.blockaway.net/" },
+      { name: "JMW Proxy", url: "https://infinitetutoring.com.au/history/textbook?historicalfigure=browser&type=local" },
+      { name: "CORS Proxy", url: "https://cors.lol/" },
+      //   { name: "test", url: "" },
+  ];
+
+  var container = document.createElement("div");
+  container.setAttribute("id", "proxyContainer");
+  document.body.appendChild(container);
+
+  proxy.forEach(function(proxy) {
+      var button = document.createElement("button");
+      button.textContent = proxy.name;
+      button.className = "ChattyButton";
+      button.onclick = function() {
+          if (proxy.url) {
+              document.body.innerHTML = '';
+              var messageText = document.createElement("p");
+              messageText.textContent = proxy.message;
+              messageText.style.color = "#fff";
+              messageText.style.marginTop = "20px";
+              document.body.appendChild(messageText);
+              document.body.innerHTML = '<object id="proxyFrame" type="text/html" data="' + proxy.url + '" style="width: 100%; height: 100vh;"></object>';
+          } else if (proxy.action) {
+              proxy.action();
+          }
+      };
+      container.appendChild(button);
+  });
+}, 1000);
+};
+
+
+document.getElementById("LaunchExploits").onclick = function() {
+document.body.innerHTML = "<h3>Loading...<h3>";
+setTimeout(function() {
+    document.body.innerHTML = "";
+    var proxy = [
+        { name: "List of Exploits", url: "https://cocalc.com/github/3kh0/ext-remover/blob/main/README.md" },
+        { name: "Old extHang3r", url: "https://html.cafe/x707b2db0" },
+        { name: "History Flooder", url: "https://spritzerland.github.io/chbook/" },
+        { name: "Kahoot Flooder", url: "https://kahoot.rocks/" },
+        { name: "Disable School Blocking exts.", url: "https://html.cafe/x36368285" },
+        { name: "Search History Byp@ss/Lanschool/Hapara bypass", url: "https://html.cafe/x88b1c570" },
+        // { name: "test", url: "" },
+    ];
+
+    var container = document.createElement("div");
+    container.setAttribute("id", "proxyContainer");
+    document.body.appendChild(container);
+
+    proxy.forEach(function(proxy) {
+        var button = document.createElement("button");
+        button.textContent = proxy.name;
+        button.className = "BarneyButton";
+        button.onclick = function() {
+            if (proxy.url) {
+                document.body.innerHTML = '';
+                var messageText = document.createElement("p");
+                messageText.textContent = proxy.message;
+                messageText.style.color = "#fff";
+                messageText.style.marginTop = "20px";
+                document.body.appendChild(messageText);
+                document.body.innerHTML = '<object id="proxyFrame" type="text/html" data="' + proxy.url + '" style="width: 100%; height: 100vh;"></object>';
+            } else if (proxy.action) {
+                proxy.action();
+            }
+        };
+        container.appendChild(button);
+    });
+}, 1000);
+};
+
+    document.getElementById("openInAboutBlank").onclick = function() {
+      var newTab = window.open('about:blank', '_blank');
+      newTab.document.open();
+      newTab.document.write(document.documentElement.outerHTML);  // Embed the current HTML content
+      newTab.document.close();
+    };
+    
+    document.getElementById("continueButton").onclick = function() {
+      document.querySelectorAll('.button, h1, #randomPhrase, #instructions').forEach(function(element) {
+        element.classList.add('hidden');
+      });
+      document.body.innerHTML = '<object id="unblockerFrame" type="text/html" data="https://bing.com/" style="width: 100%; height: 100vh;"></object>';
+    };
+
+  document.getElementById("ruffleButton").onclick = function() {
+    document.body.innerHTML = '<object id="ruffleFrame" type="text/html" data="https://ruffle.rs/demo/" style="width: 100%; height: 100vh;"></object>';
+  };
+
+
+document.getElementById("downloads").onclick = function() {
+  document.body.innerHTML = '<object id="browserFrame" type="text/html" data="https://html.cafe/xa841843c" style="width: 100%; height: 100vh;"></object>';
+};
+</script>
+</body>
+</html> ]]>
+</Content>
+</Module>
